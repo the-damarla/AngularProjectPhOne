@@ -20,7 +20,7 @@ img{
     min-width: 630px;
     margin-top: 10px;
     margin-bottom: 30px;
-    margin-left: 50px;
+    margin-left: 10px;
     margin-right: 50px;
     border-radius: 10px;
     border-top-color: #28364d ;
@@ -38,7 +38,7 @@ img{
     display: flex;
 }
 
-input{
+.CommentText{
     max-height: 37px;
     min-width: 520px;
     border-radius: 10px;
@@ -78,4 +78,9 @@ input{
 
 .bi-three-dots{
     float: right;
+}
+
+.errorShow{
+    color: red;
+    visibility: hidden;
 }

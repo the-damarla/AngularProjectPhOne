@@ -1,21 +1,39 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Comments</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <ul *ngFor="let com of comments">
+          <li>
+            {{ com.comment }}
+          </li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  
+
 <div class="card">
     <div class="card-header">
-      <img alt="{{mve.hero}}" :src={{mve.imageUrl}}><b>{{mve.hero}}</b>
+      <img alt="{{mve.hero}}" :src={{mve.imageUrl}}><b>{{ mve.hero | titlecase }}</b>
       <i class="bi bi-three-dots"></i>
     </div>
     <div class="card-body">
       <a :href="{{mve.trailerUrl}}">
-          <img class="post" :src={{mve.imageUrl}} alt="{{mve.movieName}}">
+          <img class="post" :src={{mve.imageUrl}} alt="{{mve.movieName}}" #nameOfMve>
       </a>
     </div>
     <div>
         <button type="button" class="btn">Reactions</button>
-        <i class="bi bi-heart-fill">{{mve.rating}}</i>
-        <button title="h" type="button" class="comment btn"><i class="bi bi-chat-heart"></i></button>
+        <i class="bi bi-heart-fill">{{mve.rating | number: '1.0-0'}}</i>
+        <button title="h" type="button" class="comment btn" (click)="openBackDropCustomClass(content)"><i class="bi bi-chat-heart"></i></button>
     </div>
-    <div class="hello card-header">
+    <div class="hello card-header" id="{{mve.movieName}}">
         <img :src={{mve.imageUrl}} alt="useName">
-        <input type="text" placeholder="Enter your comment">
-        <button title="sendComment" type="button" class="Sendcomment"><i class="bi bi-send"></i></button>
+        <input type="text" placeholder="Enter your comment" class="CommentText" #commentText>
+        <button title="sendComment" type="button" class="Sendcomment" (click)="commentSend(nameOfMve.alt,commentText.value,commentText)"><i class="bi bi-send"></i></button><br>
       </div>
   </div>

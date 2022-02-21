@@ -1,6 +1,7 @@
 .card{
     margin-top: 0px;
     max-height: 320px;
+    max-width: 100px;
     min-width: 300px;
     text-align: center;
     margin-left: 20px;

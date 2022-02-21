@@ -9,10 +9,10 @@
     z-index: 1;
 }
 
-img{
+.imgLogo{
     margin-top: 15px;
-    max-width: 120px;
-    max-height: 70px;
+    min-width: 120px;
+    min-height: 30px;
     margin-left: 40px;
 }
 

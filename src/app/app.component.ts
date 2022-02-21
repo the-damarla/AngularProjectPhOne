@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projectOne';
+
+  checkingOn()
+  {
+    if(localStorage.getItem('userName') == '')
+    {
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
 }

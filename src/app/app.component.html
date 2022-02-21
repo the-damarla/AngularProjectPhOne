@@ -6,7 +6,10 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<div class="navBar">
+<div *ngIf="!checkingOn()">
+  <app-login-service></app-login-service>
+</div>
+<div *ngIf="checkingOn()" class="navBar" >
 <app-nav-bar></app-nav-bar>
 </div>
 <router-outlet></router-outlet>

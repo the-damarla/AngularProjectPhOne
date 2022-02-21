@@ -1,0 +1,33 @@
+<div class="total">
+    <div class="halfClass">
+        <div>
+            <a href="/" rel="noopener noreferrer" class="logo"><img class="imgLogo" alt="ph_Ui" src="https://staticcdn-prod.peoplehum.com/static_resources/manage-ui/img/ph-logo-white-full.png"></a>
+        </div>
+        <iframe class="videoClass" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+        </iframe>        
+    </div>
+    <div class="card">
+        <div style="float: right; margin-left: 560px; margin-top: 20px;">
+            New User&nbsp;<a href="/">signUp</a>
+        </div>
+        <div class="card-header">
+            Welcome
+        </div>
+        <div class="card-body">
+            <form #loginForm>
+                <div class="userName">
+                    <input type="email" title="userEmail" placeholder="Enter e-mail..." class="credentialHolder" id="uName">
+                </div>
+                <div class="userName">
+                    <input type="password" title="passwordHolder" placeholder="Enter password..." class="credentialHolder" id="pWord">
+                </div>
+                <div style="float: right; margin-right: 200px;">
+                    <a href="/">Forgot password?</a>
+                </div>
+                <div style="margin-top: 40px;">
+                    <button (click)="checkInputs()" class="btn btn-secondary">SignIn</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
