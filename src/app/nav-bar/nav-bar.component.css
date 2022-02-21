@@ -1,0 +1,65 @@
+.navBar{
+    background-color: #28364d;
+    margin-top: 0px;
+    height: 70px;
+    display: flex;
+    justify-content:space-between;
+    position: fixed;
+    min-width: 100%;
+    z-index: 1;
+}
+
+img{
+    margin-top: 15px;
+    max-width: 120px;
+    max-height: 70px;
+    margin-left: 40px;
+}
+
+.navBar .logo{
+    float: left;
+    padding-top: 7px;
+    padding-left: 45px;
+}
+.linkers{
+    color: whitesmoke;
+    opacity: 0.3;
+}
+
+.blinkers{
+    color: whitesmoke;
+    opacity: 1;
+}
+
+.linkers:hover{
+    color: whitesmoke;
+    opacity: 1;
+    cursor: pointer;
+}
+
+table{
+    margin-right: 100px;
+    float:right;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+}
+
+.iconShow{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.icon-size{
+    font-size: 20px;
+}
+.searchBox{
+    margin-top: 12px;
+    size: 1px;
+}
+
+.homeDiv{
+    overflow-y: scroll;
+}

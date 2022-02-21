@@ -1,0 +1,30 @@
+<div style="display: flex; flex-direction: row;">
+    <div class="test">
+        <div>
+            <app-notificationcard></app-notificationcard>
+        </div>
+        <div style="position: relative; margin-top: 30px; float: right;">
+            <div class="card" id="head">
+                <div class="card-header">
+                    Add Notes..!
+                </div>
+                <div class="card-header">
+                    <input type="text" placeholder="enter notes" #task>
+                    <button type="button" class="btn btn-primary" title="AddNotes" (click)="addNotes(task.value)">AddNotes</button>
+                </div>
+                <div class="card-body">
+                    <ul *ngFor="let note of noteCard">
+                        <li>{{ note.name }} <button type="button" class="btn btn-danger" title="remove" (click)="removeNotes(note.id)">Remove</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; visibility: hidden;" id="alertDivOfNotes">*EmptyNotes Cannot Be Added!!*</div>
+        </div>
+    </div>
+<div style="display: flex; flex-direction: column; overflow-y: auto; margin-top: 80px;">
+    <div *ngFor="let mve of arOfMves.data">
+        <app-home-single-card [mve]='mve'></app-home-single-card>
+    </div>
+</div>
+</div>

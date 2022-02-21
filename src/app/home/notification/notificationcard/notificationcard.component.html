@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-header">
+<p><b>Notifications</b></p>
+</div>
+<div class="card-body">
+<div *ngFor="let notification of arOfNotifications.data">
+<app-notification-single-card [notification]="notification"></app-notification-single-card>
+</div>
+</div>
+</div>

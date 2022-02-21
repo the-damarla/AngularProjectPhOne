@@ -1,0 +1,11 @@
+<div class="search-box">
+    <button title="search" id="searchBox" class="linkers btn-search" (click)="setStyle()"><i class="icon-size bi bi-search"></i></button>
+    <input type="text" class="input-search" placeholder="Search With Movie Name..." (keyup)="myFunction()" id='inText'>
+</div>
+
+<div id="myDropdown" class="dropdown-content">
+    <ul *ngFor="let mve of arOfMves.data">
+        <li><a href='/'>{{mve.movieName}}</a></li>
+    </ul>   
+</div>
+

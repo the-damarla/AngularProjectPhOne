@@ -1,0 +1,81 @@
+img{
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.card-header{
+    border-top: 10px;
+    border-radius: 10px;
+    margin-bottom: 0px;
+}
+
+.card-body{
+    border-bottom: 20px;
+    border-bottom-color:tomato ;
+}
+
+.card{
+    min-width: 630px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    border-top-color: #28364d ;
+    box-shadow:0px 0px 10px 3px black;
+}
+
+.post{
+    margin-top: 0px;
+    min-height: 500px;
+    min-width: 600px;
+}
+
+.hello{
+    background-color: white;
+    display: flex;
+}
+
+input{
+    max-height: 37px;
+    min-width: 520px;
+    border-radius: 10px;
+}
+
+.btn{
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    color: #28364d;
+    border: 10px;
+    border-radius: 5px;
+    box-shadow:0px 0px 6px 3px #28364d;
+    margin-right: 15px;
+    background: transparent;
+}
+
+.bi-heart-fill{
+    color: red;
+}
+
+.comment{
+    margin-right: 30px;
+    float: right;
+    font-size: 10px;
+}
+
+
+.Sendcomment{
+    margin-top: 0px;
+    margin-left: 0px;
+    float: right;
+    font-size: 20px;
+    background: white;
+    border: 0px;
+}
+
+.bi-three-dots{
+    float: right;
+}

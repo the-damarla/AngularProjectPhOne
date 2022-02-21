@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+      <img alt="{{mve.hero}}" :src={{mve.imageUrl}}><b>{{mve.hero}}</b>
+      <i class="bi bi-three-dots"></i>
+    </div>
+    <div class="card-body">
+      <a :href="{{mve.trailerUrl}}">
+          <img class="post" :src={{mve.imageUrl}} alt="{{mve.movieName}}">
+      </a>
+    </div>
+    <div>
+        <button type="button" class="btn">Reactions</button>
+        <i class="bi bi-heart-fill">{{mve.rating}}</i>
+        <button title="h" type="button" class="comment btn"><i class="bi bi-chat-heart"></i></button>
+    </div>
+    <div class="hello card-header">
+        <img :src={{mve.imageUrl}} alt="useName">
+        <input type="text" placeholder="Enter your comment">
+        <button title="sendComment" type="button" class="Sendcomment"><i class="bi bi-send"></i></button>
+      </div>
+  </div>
