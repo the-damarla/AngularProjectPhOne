@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SearchDataService } from 'src/app/services/search-data.service';
 
 @Component({
   selector: 'app-search-bar-input',
@@ -6,6 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar-input.component.css']
 })
 export class SearchBarInputComponent implements OnInit {
+
+  fetchedData:any
+  constructor(private router: Router, private searchData:SearchDataService) {
+    this.searchData.searchData().subscribe((data)=>{
+      this.fetchedData = data
+    })
+   }
+  ngOnInit(): void {
+  }
 
   arOfMves={
     data : [
@@ -78,7 +89,7 @@ export class SearchBarInputComponent implements OnInit {
   {
     document.getElementById('searchBox')!.style.opacity="1"
   }
-  myFunction() {
+  myFun() {
     document.getElementById("myDropdown")!.classList.toggle("show");
     this.filterFunction()
   }
@@ -98,8 +109,10 @@ export class SearchBarInputComponent implements OnInit {
       }
     }
   }
-  constructor() { }
-  ngOnInit(): void {
+
+  refreshPage(nameOfMovie:any)
+  {
+    this.router.navigate([ '/anotherProfile/'+ nameOfMovie ])
   }
 
 }

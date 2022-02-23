@@ -13,6 +13,9 @@ import { NotificationcardComponent } from './home/notification/notificationcard/
 import { NotificationSingleCardComponent } from './home/notification/notificationcard/notification-single-card/notification-single-card.component';
 import { LoginServiceComponent } from './authorization/login-service/login-service.component';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ViewAnotherProfileComponent } from './another-profile/view-another-profile/view-another-profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SignUpServiceComponent } from './authorization/sign-up-service/sign-up-service.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,17 @@ import { FormsModule, NgForm } from '@angular/forms';
     HomeSingleCardComponent,
     NotificationcardComponent,
     NotificationSingleCardComponent,
-    LoginServiceComponent
+    LoginServiceComponent,
+    ViewAnotherProfileComponent,
+    SignUpServiceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

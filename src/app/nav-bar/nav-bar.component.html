@@ -1,6 +1,6 @@
 <div class="navBar">
     <div>
-    <a href="/" rel="noopener noreferrer" class="logo"><img class="imgLogo" alt="ph_Ui" src="https://staticcdn-prod.peoplehum.com/static_resources/manage-ui/img/ph-logo-white-full.png"></a>
+    <a href="/navBar" rel="noopener noreferrer" class="logo"><img style="margin-top: 15px;min-width: 120px;min-height: 30px;margin-left: 40px; max-width: 120px;" class="imgLogo" alt="ph_Ui" src="https://staticcdn-prod.peoplehum.com/static_resources/manage-ui/img/ph-logo-white-full.png"></a>
     </div>
     <div>
     <table>
@@ -9,16 +9,16 @@
                 <app-search-bar-input></app-search-bar-input>
             </li>
             <li class="iconShow">
-                <a *ngIf="home" title="home" id="homePh" rel="noopener noreferrer" class="linkers" (click)="hasClickedHome()"><i class="icon-size bi bi-house-heart"></i></a>
+                <a *ngIf="home" routerLink="/navBar" title="home" id="homePh" rel="noopener noreferrer" class="linkers" (click)="hasClickedHome()"><i class="icon-size bi bi-house-heart"></i></a>
                 <a *ngIf="!home" title="home" id="notHomePh" rel="noopener noreferrer" class="blinkers" (click)="hasClickedHome()"><i class="icon-size bi bi-house-heart-fill"></i></a>
             </li>
             <li class="iconShow">
-                <a *ngIf="ticket" title="ticket" id="ticketPh" rel="noopener noreferrer" class="linkers" (click)="hasClickedTicket()"><i class="icon-size bi bi-ticket-detailed"></i></a>
+                <a *ngIf="ticket" routerLink="/navBar" title="ticket" id="ticketPh" rel="noopener noreferrer" class="linkers" (click)="hasClickedTicket()"><i class="icon-size bi bi-ticket-detailed"></i></a>
                 <a *ngIf="!ticket" title="ticket" id="notTicketPh" rel="noopener noreferrer" class="blinkers" (click)="hasClickedTicket()"><i class="icon-size bi bi-ticket-detailed-fill"></i></a>
             </li>
             <li class="iconShow">
                 <a *ngIf="setting" title="settings" id="settingPh" rel="noopener noreferrer" class="linkers" (click)="hasClickedSettings()"><i class="icon-size bi bi-gear"></i></a>
-                <a *ngIf="!setting"title="settings" id="notSettingPh" rel="noopener noreferrer" class="blinkers" (click)="hasClickedSettings()"><i class="icon-size bi bi-gear-fill"></i></a>
+                <a *ngIf="!setting" title="settings" id="notSettingPh" rel="noopener noreferrer" class="blinkers" (click)="hasClickedSettings()"><i class="icon-size bi bi-gear-fill"></i></a>
             </li>
             <li class="iconShow">
                 <a *ngIf="profile" title="profile" id="profilePh" rel="noopener noreferrer" class="linkers" (click)="hasClickedProfile()"><i class="icon-size bi bi-person"></i></a>
@@ -31,4 +31,13 @@
 
 <div class="homeDiv" *ngIf="!home">
 <app-home-card></app-home-card>
+</div>
+
+<div *ngIf="!ticket">
+    <div >
+        <div  style="margin-top: 100px; position: fixed;">
+            hello
+        </div>
+    </div>
+
 </div>

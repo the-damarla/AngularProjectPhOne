@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  home = false
+  home = true
   setting = true
   ticket = true
   profile = true

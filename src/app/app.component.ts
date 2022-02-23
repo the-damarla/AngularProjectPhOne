@@ -10,12 +10,9 @@ export class AppComponent {
 
   checkingOn()
   {
-    if(localStorage.getItem('userName') == '')
-    {
-      return false;
-    }
-    else{
-      return true;
-    }
+     const k = localStorage.getItem('userName')
+     if(k == null)return false
+     else return true
   }
+
 }

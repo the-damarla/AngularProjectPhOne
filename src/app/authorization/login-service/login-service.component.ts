@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { use } from 'vue/types/umd';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login-service',
@@ -7,8 +8,15 @@ import { use } from 'vue/types/umd';
   styleUrls: ['./login-service.component.css']
 })
 export class LoginServiceComponent implements OnInit {
+  constructor(private router: Router) { 
+    this.flag = true
+   }
 
-  constructor() { }
+  flag = true
+  changeToSignUp()
+  {
+    this.flag=!this.flag
+  }
 
   isEmail(email:any)
   {
@@ -35,6 +43,7 @@ export class LoginServiceComponent implements OnInit {
     }
     else{
       localStorage.setItem('userName',userName)
+      this.router.navigateByUrl('/navBar');
     }
   }
 

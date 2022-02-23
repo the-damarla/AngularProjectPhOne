@@ -1,4 +1,4 @@
-<div class="total">
+<div *ngIf="flag" class="total">
     <div class="halfClass">
         <div>
             <a href="/" rel="noopener noreferrer" class="logo"><img class="imgLogo" alt="ph_Ui" src="https://staticcdn-prod.peoplehum.com/static_resources/manage-ui/img/ph-logo-white-full.png"></a>
@@ -8,7 +8,7 @@
     </div>
     <div class="card">
         <div style="float: right; margin-left: 560px; margin-top: 20px;">
-            New User&nbsp;<a href="/">signUp</a>
+            New User&nbsp;<a routerLink="/signUp" (click)="changeToSignUp()">signUp</a>
         </div>
         <div class="card-header">
             Welcome
