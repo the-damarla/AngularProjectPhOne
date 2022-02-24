@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieDataService } from 'src/app/services/movie-data.service';
-import { FeedDataService } from 'src/app/services/feed-data.service';
+import { SearchDataService } from 'src/app/services/search-data.service';
 
 @Component({
   selector: 'app-view-another-profile',
@@ -10,53 +10,33 @@ import { FeedDataService } from 'src/app/services/feed-data.service';
 })
 export class ViewAnotherProfileComponent implements OnInit {
 
-  movieProfile:any
-  displayMovie:any
+  heroProfile:any
+  displayMovies:any [] = []
   gettingData:any [] = []
-  constructor(private route:ActivatedRoute, private mves:MovieDataService,private feedData:FeedDataService) { 
-    feedData.feedData().subscribe((data)=>{
+  constructor(private route:ActivatedRoute, private mves:MovieDataService,private searchData:SearchDataService) { 
+    searchData.searchData().subscribe((data)=>{
         console.log(data)
         this.gettingData.push(data)
+        console.log("heyyyy" , this.gettingData[0][0])
+        this.checkingData()
     })
    }
 
-  checkingData(this: any)
-    {
-      for(let i=0;i<this.mves.arOfMves.data.length;i++)
+  ngOnInit(): void {
+    this.heroProfile = this.route.snapshot.paramMap.get('hero')
+  }
+
+  checkingData()
+   { 
+      for(let i=0;i<this.gettingData[0].length;i++)
       {
-        // console.log("  " + this.mves.arOfMves.data[i].movieName + " " + this.movieProfile)
-        if(this.movieProfile === this.mves.arOfMves.data[i].movieName)
+        console.log(this.gettingData[0].hero, "hero", i)
+        if(this.gettingData[0][i].name == this.heroProfile)
         {
-          console.log("I got U dude" + this.mves.arOfMves.data[i].movieName)
-          this.displayMovie = this.mves.arOfMves.data[i]
-          console.log(this.displayMovie)
+          this.displayMovies = this.gettingData[0][i].movies
+          console.log(this.displayMovies)
+          return
         }
       }
-    }
-    checkInExistingWatchList(nameOfMovie:any)
-    {
-      for(let i=0;i<this.gettingData.length;i++)
-      {
-        if(nameOfMovie === this.gettingData[i].movieName)return false
-      }
-      return true
-    }
-    sendToWatchList(selectedMovie:any)
-    {
-      document.getElementById('showError')!.style.visibility="hidden"
-      if(this.checkInExistingWatchList(selectedMovie.movieName))
-      {
-        document.getElementById('showError')!.style.visibility="inherit"
-        return
-      }
-      this.feedData.AddToWatchList(selectedMovie).subscribe((data)=>{
-        console.log(data)
-      })
-    }
-
-
-  ngOnInit(): void {
-    this.movieProfile = this.route.snapshot.paramMap.get('movie')
-    this.checkingData()
-  }
+   }
 }

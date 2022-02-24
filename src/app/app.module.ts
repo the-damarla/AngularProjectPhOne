@@ -16,6 +16,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { ViewAnotherProfileComponent } from './another-profile/view-another-profile/view-another-profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpServiceComponent } from './authorization/sign-up-service/sign-up-service.component';
+import { ListOfMoviesComponent } from './available-movies/list-of-movies/list-of-movies.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SignUpServiceComponent } from './authorization/sign-up-service/sign-up-
     NotificationSingleCardComponent,
     LoginServiceComponent,
     ViewAnotherProfileComponent,
-    SignUpServiceComponent
+    SignUpServiceComponent,
+    ListOfMoviesComponent,
   ],
   imports: [
     BrowserModule,

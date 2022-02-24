@@ -1,0 +1,40 @@
+img{
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+
+.btn{
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    color: #28364d;
+    border: 10px;
+    border-radius: 5px;
+    box-shadow:0px 0px 6px 3px #28364d;
+    margin-right: 15px;
+    background: transparent;
+}
+
+.btn:hover{
+    background: turquoise;
+}
+
+.tableHeader{
+    padding-left: 30px;
+    padding-right: 50px;
+    color: red;
+    align-content:center ;
+}
+
+.classToShow{
+    margin-right: 30px; 
+    max-width: 100px;
+    min-width: 100px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:inline-block;
+    white-space: nowrap;
+}

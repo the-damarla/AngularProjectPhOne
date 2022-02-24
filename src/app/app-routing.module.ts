@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     component:ViewAnotherProfileComponent,
-    path:'anotherProfile/:movie'
+    path:'anotherProfile/:hero'
   },
   {
     component:SignUpServiceComponent,

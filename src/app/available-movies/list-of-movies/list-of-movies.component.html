@@ -1,0 +1,21 @@
+<div style="margin-left: 200px;">
+<button style="margin-top: 80px;" class="btn-primary" (click) = "sortedDisplay()">Sort By Ratings</button>
+<button style="margin-top: 80px;" class="btn-primary" (click) = "phSuggested()">Ph Suggested</button>
+<button style="margin-top: 80px;" class="btn-primary" (click) = "phSuggested()">Add A Movie</button>
+</div>
+
+<table style="margin-left: 450px;">
+    <th class="tableHeader">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th class="tableHeader">Movie Name</th>
+    <th class="tableHeader">Artist</th>
+    <th class="tableHeader">Rating</th>
+</table>
+<div *ngFor="let movies of arrayToDisplay" style="margin-left: 530px;">
+    <div style="display: flex; flex-direction: row; text-align: center;">
+        <div style="margin-right: 30px;"><img src="{{movies.imageUrl}}" height="50px" width="50px" alt={{movies.movieName}}></div>
+        <div class="classToShow" title="{{ movies.movieName }}">{{ movies.movieName }}</div>
+        <div class="classToShow" title="{{ movies.hero }}" (click)="openHeroProfile(movies.hero)"><a href="/anotherProfile/{{ movies.hero }}">{{ movies.hero }}</a></div>
+        <div class="classToShow" title="{{ movies.rating }}">{{ movies.rating }}</div>
+        <div><button type="button" class="btn btn-secondary">Add To WatchList</button></div>
+    </div>
+</div>

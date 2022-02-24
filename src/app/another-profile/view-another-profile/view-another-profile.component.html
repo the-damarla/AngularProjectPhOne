@@ -2,17 +2,17 @@
 <div style="margin-top: 50px; display: flex; flex-direction: column;text-align: center; align-content: center;">
     <div class="card">
         <div class="card-header" style="max-width: 90%; min-width: 90%; margin-left: 60px;">
-            <h2>{{ displayMovie.movieName }}</h2>
+            {{heroProfile}}
         </div>
         <div class="card-body">
-            <div>
-                <img src={{displayMovie.imageUrl}} alt="{{ displayMovie.movieName }}" height="500px" width="500px">
+            <div *ngFor="let mves of displayMovies">
+                {{mves.movieName}}
             </div>
             <div>
-                <a href={{displayMovie.trailerUrl}} style="margin-right: 10px;">watchTrailer</a><button (click)="sendToWatchList(displayMovie)" class="btn btn-secondary">Add TO WatchList</button>
+                Hello..!!
             </div>
             <div>
-                <label id='showError' style="visibility: hidden;">*Already In WatchList*</label>
+                hello..!!
             </div>
         </div>
     </div>
