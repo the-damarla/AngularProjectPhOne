@@ -12,4 +12,9 @@ export class RegisterDataService {
   {
     return this.http.post(this.baseUrl,item)
   }
+
+  getRegisteredDetails()
+  {
+    return this.http.get(this.baseUrl)
+  }
 }

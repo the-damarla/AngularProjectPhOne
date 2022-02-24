@@ -14,8 +14,8 @@
     <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)"> 
         <div class="userName"><input type="text" name="firstName" class="credentialHolder" placeholder="enter Name...*" id="fName" ngModel></div>
         <div class="userName"><input type="text" name="orgName" class="credentialHolder" placeholder="enter Organisation..*" id="orgName" ngModel></div>
-        <div class="userName"><input type="email" name="emailId" class="credentialHolder" placeholder="enter email..*" id="eMail" ngModel></div>
-        <div class="userName"><input type="password" name="passWord" class="credentialHolder" placeholder="Enter Password..*" id="pWord" ngModel></div>
+        <div class="userName"><input type="email" name="emailId" class="credentialHolder" placeholder="enter email..*" id="eMail" ngModel><br><label id='invalidMail'></label></div>
+        <div class="userName"><input type="password" name="passWord" class="credentialHolder" placeholder="Enter Password..*" id='pWord' ngModel></div>
         <button class="btn btn-secondary">Register</button>
     </form>
 </div>

@@ -8,13 +8,28 @@ import { RegisterDataService } from 'src/app/services/register-data.service';
 })
 export class SignUpServiceComponent implements OnInit {
 
-  constructor(private registerData:RegisterDataService) { }
+  existingDetails:any [] = []
+  constructor(private registerData:RegisterDataService) { 
+    this.registerData.getRegisteredDetails().subscribe((data)=>{
+      this.existingDetails.push(data)
+      console.log(this.existingDetails[0].length)
+    })
+  }
 
   flag:number = 0
 
   isEmail(email:any)
   {
     return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/.test(email);
+  }
+
+  checkWithExistingMails(email:any)
+  {
+    for(let i=0;i<this.existingDetails[0].length;i++)
+    {
+      if(email == this.existingDetails[0][i].emailId){return false}
+    }
+    return true
   }
 
   checkInputs(item:any)
@@ -43,13 +58,21 @@ export class SignUpServiceComponent implements OnInit {
     }
     if(!this.isEmail(eMail))
     {
-      document.getElementById('eMail')!.style.boxShadow="0px 0px 3px 1px red"
+      document.getElementById('eMail')!.style.boxShadow="0px 0px 3px 1px red";
+    }
+    else if(!this.checkWithExistingMails(eMail))
+    {
+      document.getElementById('eMail')!.style.boxShadow="0px 0px 3px 1px red";
+      (<HTMLInputElement>document.getElementById('eMail')).value='';
+      document.getElementById('invalidMail')!.innerHTML="*EMAIL ALREADY EXISTS*"
+      document.getElementById('invalidMail')!.style.visibility = "inherit"
     }
     else{
       document.getElementById('eMail')!.style.boxShadow="0px 0px 3px 1px black"
+      document.getElementById('invalidMail')!.style.visibility = "hidden"
       this.flag++
     }
-    if(pWord == '')
+    if(pWord === '')
     {
       document.getElementById('pWord')!.style.boxShadow="0px 0px 3px 1px red"
     }
